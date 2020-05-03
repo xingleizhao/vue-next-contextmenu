@@ -1,5 +1,6 @@
 # vue-next-contextmenu
 
+
 基于 vue-next 3.0.0-beta.7 的 contextmenu 组件
 
 ## 使用
@@ -47,3 +48,6 @@ npm run dev
 # transpile js for deployment
 npm run build
 ```
+=======
+Experimental package based on Vue next
+
