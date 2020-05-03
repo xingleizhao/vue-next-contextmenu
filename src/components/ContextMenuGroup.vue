@@ -8,6 +8,7 @@
 <script>
 import { reactive } from "vue";
 export default {
+  name: 'ContextMenuGroup',
   props: {
     name: {
       type: String,

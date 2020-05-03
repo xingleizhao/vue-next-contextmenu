@@ -7,6 +7,7 @@
 <script>
 import { reactive, computed, inject } from "vue"
 export default {
+  name: 'ContextMenuItem',
   props: {
     disabled: Boolean,
     hideMenu: {

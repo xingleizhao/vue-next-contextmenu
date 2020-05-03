@@ -18,6 +18,7 @@ export default {
     width: String,
     height:  String
   },
+  name: 'ContextMenu',
   setup() {
     Vue.provide('instance', Vue.getCurrentInstance())
     const contextmenu = Vue.ref(null)

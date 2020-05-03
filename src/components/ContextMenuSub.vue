@@ -17,6 +17,7 @@
 <script>
 import { onMounted, onUnmounted, ref, reactive, nextTick, computed } from 'vue'
 export default {
+  name: 'ContextMenuSub',
   setup() {
     const contextmenuSub = ref(null)
     const hover = ref(false)

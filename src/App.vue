@@ -30,6 +30,7 @@ import ContextMenu from './components/ContextMenu.vue'
 import ContextMenuItem from './components/ContextMenuItem.vue'
 import ContextMenuGroup from './components/ContextMenuGroup.vue'
 import ContextMenuSub from "./components/ContextMenuSub.vue"
+
 import { ref, nextTick, createApp } from 'vue'
 export default {
   components: {
@@ -37,7 +38,6 @@ export default {
     ContextMenuGroup,
     ContextMenuSub,
     ContextMenuItem,
-    ContextMenuSub
   },
   setup(props) {
     const contextmenu = ref(null)
@@ -53,10 +53,5 @@ export default {
 </script>
 
 <style scoped>
-img {
-  width: 200px;
-}
-h1 {
-  font-family: Arial, Helvetica, sans-serif;
-}
+
 </style>
