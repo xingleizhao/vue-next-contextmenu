@@ -1,7 +1,6 @@
 import  {createApp} from 'vue'
 import App from './App.vue'
 import './styles/index.styl'
-import './styles/font-awesome.min.styl'
 
 
 const app = createApp(App)

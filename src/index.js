@@ -2,6 +2,7 @@ import ContextMenu from './components/ContextMenu.vue'
 import ContextMenuItem from './components/ContextMenuItem.vue'
 import ContextMenuSub from './components/ContextMenuSub.vue'
 import ContextMenuGroup from './components/ContextMenuGroup.vue'
+import './styles/index.styl'
 
 
 const useDirective = (app) => { 
