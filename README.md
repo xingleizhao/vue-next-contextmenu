@@ -1,7 +1,27 @@
 # vue-next-contextmenu
 
-
 基于 vue-next 3.0.0-beta.7 的 contextmenu 组件
+
+![效果图](https://imgkr.cn-bj.ufileos.com/a17942a1-18b0-4ce4-8a44-d91251dbcfbf.png)
+
+## 概览
+
+暴露如下组件：
+
+- `ContextMenu`
+- `ContextMenuItem`
+- `ContextMenuSub`
+- `ContextMenuGroup`
+
+## 安装
+
+### Prerequisites
+- Node & NPM
+
+### Install
+```sh
+npm install vue-next-contextmenu --save
+```
 
 ## 使用
 
@@ -30,24 +50,4 @@ app.mount('#app')
 ```
 
 
-### Prerequisites
-- Node & NPM
-
-### Install
-```sh
-npm install
-```
-### Usage
-##### Develop
-```sh
-# run dev server at localhost:8080
-npm run dev
-```
-##### Build
-```sh
-# transpile js for deployment
-npm run build
-```
-=======
-Experimental package based on Vue next
 
