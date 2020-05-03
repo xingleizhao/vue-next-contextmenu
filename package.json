@@ -1,0 +1,43 @@
+{
+  "name": "vue-next-contextmenu",
+  "version": "1.0.0",
+  "description": "An experimental context menu based on Vue next",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server",
+    "build": "webpack --env.prod",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xingleizhao/vue-next-contextmenu.git"
+  },
+  "keywords": [
+    "vue-next",
+    "vue3.0",
+    "contextmemu"
+  ],
+  "author": "zhaoxinglei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xingleizhao/vue-next-contextmenu/issues"
+  },
+  "homepage": "https://github.com/xingleizhao/vue-next-contextmenu#readme",
+  "dependencies": {
+    "mitt": "^1.2.0",
+    "vue": "^3.0.0-beta.4"
+  },
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.0.0-beta.2",
+    "css-loader": "^3.4.2",
+    "file-loader": "^6.0.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2",
+    "url-loader": "^4.0.0",
+    "vue-loader": "^16.0.0-alpha.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
