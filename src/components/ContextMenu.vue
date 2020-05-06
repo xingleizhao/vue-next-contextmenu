@@ -11,15 +11,15 @@
 </template>
 
 <script>
-import { provide, reactive, ref, getCurrentInstance, onMounted, onUnmounted, nextTick } from 'vue'
+import { defineComponent, provide, reactive, ref, getCurrentInstance, onMounted, onUnmounted, nextTick } from 'vue'
 
-export default {
+export default defineComponent({
   props: {
     width: String,
     height:  String
   },
   name: 'ContextMenu',
-  setup() {
+  setup(props, { slots, attrs }) {
     provide('instance', getCurrentInstance())
     const contextmenu = ref(null)
     const state = reactive({ isVisible: false })
@@ -84,7 +84,7 @@ export default {
       registerHandlers
     }
   }
-}
+})
 </script>
 
 <style>

@@ -3,7 +3,7 @@ const { VueLoaderPlugin } = require('vue-loader')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = (env = {}) => ({
-  mode: 'development',
+  mode: env.prod ? 'production' : 'development', // mode 为 'development' 编译后的文件不进行压缩
   devtool: env.prod ? 'source-map' : 'cheap-module-eval-source-map',
   entry: path.resolve(__dirname, './src/index.js'),
   output: {

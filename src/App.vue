@@ -32,8 +32,9 @@ import ContextMenuItem from './components/ContextMenuItem.vue'
 import ContextMenuGroup from './components/ContextMenuGroup.vue'
 import ContextMenuSub from "./components/ContextMenuSub.vue"
 
-import { ref, nextTick, createApp } from 'vue'
-export default {
+import { defineComponent, ref, nextTick, createApp } from 'vue'
+export default defineComponent({
+  name: 'App',
   components: {
     ContextMenu,
     ContextMenuGroup,
@@ -50,7 +51,7 @@ export default {
       handleSelect
     }
   }
-}
+})
 </script>
 
 <style scoped>
