@@ -11,6 +11,7 @@
         <context-menu-item :hideMenu="false">不隐藏菜单</context-menu-item>
         <context-menu-sub>
           <context-menu-item>item11</context-menu-item>
+          <context-menu-item>item11</context-menu-item>
           <context-menu-group name="分组标题">
             <context-menu-item>item11</context-menu-item>
             <context-menu-item disabled>item11</context-menu-item>

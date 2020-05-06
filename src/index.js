@@ -6,12 +6,15 @@ import './styles/index.styl'
 
 
 const useDirective = (app) => { 
+  app.component(ContextMenu.name, ContextMenu)
+  app.component(ContextMenuItem.name, ContextMenuItem)
+  app.component(ContextMenuSub.name, ContextMenuSub)
+  app.component(ContextMenuGroup.name, ContextMenuGroup)
   app.directive('contextmenu', (el, binding, vnode) => {
     const instance = vnode.dirs[0].instance
     instance.contextmenu.registerHandlers({el, vnode})
   })
 }
-
 
 export {
   ContextMenu,

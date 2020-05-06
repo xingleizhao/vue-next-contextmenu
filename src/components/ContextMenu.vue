@@ -4,7 +4,7 @@
       class="next-context-menu" 
       v-show="state.isVisible" 
       :style="{height: `${height}px`, width: `${width}px`}" 
-      ref="contextmenu">
+      ref="contextmenus">
       <slot></slot>
     </ul>
   </div>
@@ -21,7 +21,7 @@ export default {
   name: 'ContextMenu',
   setup() {
     Vue.provide('instance', Vue.getCurrentInstance())
-    const contextmenu = Vue.ref(null)
+    const contextmenus = Vue.ref(null)
     const state = Vue.reactive({ isVisible: false})
 
     const registerHandlers = (ref) => {
@@ -37,7 +37,7 @@ export default {
 
     const handleContextMenu = (e) => {
       e.preventDefault()
-      const { value: menuEl } = contextmenu
+      const { value: menuEl } = contextmenus
       const { pageX: x, pageY: y } = e
       state.isVisible = true
       Vue.nextTick(() => {
@@ -45,10 +45,9 @@ export default {
         menuEl.style.top = `${top + 5}px`
         menuEl.style.left = `${left + 5}px`
       })
-      return
     }
     const getMenuPosition = (x, y) => {
-      const { value: menuEl } = contextmenu
+      const { value: menuEl } = contextmenus
       const menuStyles = { top: y, left: x }
       const { innerWidth, innerHeight } = window;
       const { clientWidth: menuElWidth, clientHeight: menuElHeight } = menuEl
@@ -64,7 +63,7 @@ export default {
     }
     const handleOutsideClick = (e) => {
       const { target } = e
-      const { value: menuEl } = contextmenu
+      const { value: menuEl } = contextmenus
       const containsHit = menuEl.contains(target)
       if (!containsHit) hideMenu()
     }
@@ -72,7 +71,7 @@ export default {
       state.isVisible = false
     }
     Vue.onMounted(() => {
-      //registerHandlers()
+     // registerHandlers()
     })
 
     Vue.onUnmounted(() => {
@@ -80,7 +79,7 @@ export default {
     })
     return {
       state,
-      contextmenu,
+      contextmenus,
       hideMenu,
       registerHandlers
     }
