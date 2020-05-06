@@ -5,7 +5,7 @@
     @mouseleave="handleMouseLeave"
     >
     <div class="menu-sub-label">
-      <span>子菜单</span>
+      <span><slot name="label">{{label}}</slot></span>
       <i class="fa fa-angle-right"></i>
     </div>
     <ul class="next-context-menu" :class="getClassName" ref="contextmenuSub" v-show="hover">
@@ -18,6 +18,9 @@
 import { onMounted, onUnmounted, ref, reactive, nextTick, computed } from 'vue'
 export default {
   name: 'ContextMenuSub',
+  props: {
+    label: String
+  },
   setup() {
     const contextmenuSub = ref(null)
     const hover = ref(false)

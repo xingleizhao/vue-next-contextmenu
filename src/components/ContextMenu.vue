@@ -25,6 +25,7 @@ export default {
     const state = Vue.reactive({ isVisible: false})
 
     const registerHandlers = (ref) => {
+      console.log(ref)
       let target = ref.el
       target.addEventListener('contextmenu', handleContextMenu)
       document.addEventListener('mousedown', handleOutsideClick, false)
