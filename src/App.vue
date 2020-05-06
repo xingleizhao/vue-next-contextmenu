@@ -27,18 +27,18 @@
 </template>
 
 <script>
-import ContextMenu from './components/ContextMenu.vue'
-import ContextMenuItem from './components/ContextMenuItem.vue'
-import ContextMenuGroup from './components/ContextMenuGroup.vue'
-import ContextMenuSub from "./components/ContextMenuSub.vue"
+// import ContextMenu from './components/ContextMenu.vue'
+// import ContextMenuItem from './components/ContextMenuItem.vue'
+// import ContextMenuGroup from './components/ContextMenuGroup.vue'
+// import ContextMenuSub from "./components/ContextMenuSub.vue"
 
 import { ref, nextTick, createApp } from 'vue'
 export default {
   components: {
-    ContextMenu,
-    ContextMenuGroup,
-    ContextMenuSub,
-    ContextMenuItem,
+    // ContextMenu,
+    // ContextMenuGroup,
+    // ContextMenuSub,
+    // ContextMenuItem,
   },
   setup(props) {
     const contextmenu = ref(null)
