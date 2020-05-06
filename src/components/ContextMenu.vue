@@ -4,14 +4,14 @@
       class="next-context-menu" 
       v-show="state.isVisible" 
       :style="{height: `${height}px`, width: `${width}px`}" 
-      ref="contextmenus">
+      ref="contextmenu">
       <slot></slot>
     </ul>
   </div>
 </template>
 
 <script>
-import  * as Vue from 'vue'
+import { provide, reactive, ref, getCurrentInstance, onMounted, onUnmounted, nextTick } from 'vue'
 
 export default {
   props: {
@@ -20,12 +20,11 @@ export default {
   },
   name: 'ContextMenu',
   setup() {
-    Vue.provide('instance', Vue.getCurrentInstance())
-    const contextmenus = Vue.ref(null)
-    const state = Vue.reactive({ isVisible: false})
+    provide('instance', getCurrentInstance())
+    const contextmenu = ref(null)
+    const state = reactive({ isVisible: false })
 
     const registerHandlers = (ref) => {
-      console.log(ref)
       let target = ref.el
       target.addEventListener('contextmenu', handleContextMenu)
       document.addEventListener('mousedown', handleOutsideClick, false)
@@ -38,17 +37,17 @@ export default {
 
     const handleContextMenu = (e) => {
       e.preventDefault()
-      const { value: menuEl } = contextmenus
+      const { value: menuEl } = contextmenu
       const { pageX: x, pageY: y } = e
       state.isVisible = true
-      Vue.nextTick(() => {
+      nextTick(() => {
         const { left, top } = getMenuPosition(x, y)
         menuEl.style.top = `${top + 5}px`
         menuEl.style.left = `${left + 5}px`
       })
     }
     const getMenuPosition = (x, y) => {
-      const { value: menuEl } = contextmenus
+      const { value: menuEl } = contextmenu
       const menuStyles = { top: y, left: x }
       const { innerWidth, innerHeight } = window;
       const { clientWidth: menuElWidth, clientHeight: menuElHeight } = menuEl
@@ -64,23 +63,23 @@ export default {
     }
     const handleOutsideClick = (e) => {
       const { target } = e
-      const { value: menuEl } = contextmenus
+      const { value: menuEl } = contextmenu
       const containsHit = menuEl.contains(target)
       if (!containsHit) hideMenu()
     }
     const hideMenu = () => {
       state.isVisible = false
     }
-    Vue.onMounted(() => {
-     // registerHandlers()
+    onMounted(() => {
+     //registerHandlers()
     })
 
-    Vue.onUnmounted(() => {
+    onUnmounted(() => {
       unregisterHandlers()
     })
     return {
       state,
-      contextmenus,
+      contextmenu,
       hideMenu,
       registerHandlers
     }

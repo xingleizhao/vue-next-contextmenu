@@ -7,7 +7,6 @@ import './styles/index.styl'
 
 
 const useDirective = (app) => { 
-  console.log(ContextMenu.name)
   app.component(ContextMenu.name, ContextMenu)
   app.component(ContextMenuItem.name, ContextMenuItem)
   app.component(ContextMenuSub.name, ContextMenuSub)

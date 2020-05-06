@@ -26,7 +26,6 @@ export default {
     const hover = ref(false)
     const dynamicClass = reactive({ name: [] })
     const handleMouseEnter = (e) => {
-      console.log(e)
       hover.value = true
       nextTick(() => {
         dynamicClass.name = setDynamicClass(e)

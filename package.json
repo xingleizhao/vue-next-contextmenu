@@ -1,6 +1,6 @@
 {
   "name": "vue-next-contextmenu",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "An experimental context menu based on Vue next",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",

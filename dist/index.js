@@ -8584,12 +8584,12 @@ __webpack_require__.r(__webpack_exports__);
   },
   name: 'ContextMenu',
   setup() {
-    vue__WEBPACK_IMPORTED_MODULE_0__["provide"]('instance', vue__WEBPACK_IMPORTED_MODULE_0__["getCurrentInstance"]())
-    const contextmenus = vue__WEBPACK_IMPORTED_MODULE_0__["ref"](null)
-    const state = vue__WEBPACK_IMPORTED_MODULE_0__["reactive"]({ isVisible: false})
+    Object(vue__WEBPACK_IMPORTED_MODULE_0__["provide"])('instance', Object(vue__WEBPACK_IMPORTED_MODULE_0__["getCurrentInstance"])())
+    const contextmenu = Object(vue__WEBPACK_IMPORTED_MODULE_0__["ref"])(null)
+    console.log(contextmenu)
+    const state = Object(vue__WEBPACK_IMPORTED_MODULE_0__["reactive"])({ isVisible: false })
 
     const registerHandlers = (ref) => {
-      console.log(ref)
       let target = ref.el
       target.addEventListener('contextmenu', handleContextMenu)
       document.addEventListener('mousedown', handleOutsideClick, false)
@@ -8602,17 +8602,17 @@ __webpack_require__.r(__webpack_exports__);
 
     const handleContextMenu = (e) => {
       e.preventDefault()
-      const { value: menuEl } = contextmenus
+      const { value: menuEl } = contextmenu
       const { pageX: x, pageY: y } = e
       state.isVisible = true
-      vue__WEBPACK_IMPORTED_MODULE_0__["nextTick"](() => {
+      Object(vue__WEBPACK_IMPORTED_MODULE_0__["nextTick"])(() => {
         const { left, top } = getMenuPosition(x, y)
         menuEl.style.top = `${top + 5}px`
         menuEl.style.left = `${left + 5}px`
       })
     }
     const getMenuPosition = (x, y) => {
-      const { value: menuEl } = contextmenus
+      const { value: menuEl } = contextmenu
       const menuStyles = { top: y, left: x }
       const { innerWidth, innerHeight } = window;
       const { clientWidth: menuElWidth, clientHeight: menuElHeight } = menuEl
@@ -8628,23 +8628,23 @@ __webpack_require__.r(__webpack_exports__);
     }
     const handleOutsideClick = (e) => {
       const { target } = e
-      const { value: menuEl } = contextmenus
+      const { value: menuEl } = contextmenu
       const containsHit = menuEl.contains(target)
       if (!containsHit) hideMenu()
     }
     const hideMenu = () => {
       state.isVisible = false
     }
-    vue__WEBPACK_IMPORTED_MODULE_0__["onMounted"](() => {
-     // registerHandlers()
+    Object(vue__WEBPACK_IMPORTED_MODULE_0__["onMounted"])(() => {
+     //registerHandlers()
     })
 
-    vue__WEBPACK_IMPORTED_MODULE_0__["onUnmounted"](() => {
+    Object(vue__WEBPACK_IMPORTED_MODULE_0__["onUnmounted"])(() => {
       unregisterHandlers()
     })
     return {
       state,
-      contextmenus,
+      contextmenu,
       hideMenu,
       registerHandlers
     }
@@ -8799,7 +8799,7 @@ function render(_ctx, _cache) {
     Object(vue__WEBPACK_IMPORTED_MODULE_0__["withDirectives"])(Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("ul", {
       class: "next-context-menu",
       style: {height: `${_ctx.height}px`, width: `${_ctx.width}px`},
-      ref: "contextmenus"
+      ref: "contextmenu"
     }, [
       Object(vue__WEBPACK_IMPORTED_MODULE_0__["renderSlot"])(_ctx.$slots, "default")
     ], 4 /* STYLE */), [
@@ -9272,8 +9272,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 const useDirective = (app) => { 
-  console.log(_components_ContextMenu_vue__WEBPACK_IMPORTED_MODULE_0__["default"].name)
   app.component(_components_ContextMenu_vue__WEBPACK_IMPORTED_MODULE_0__["default"].name, _components_ContextMenu_vue__WEBPACK_IMPORTED_MODULE_0__["default"])
   app.component(_components_ContextMenuItem_vue__WEBPACK_IMPORTED_MODULE_1__["default"].name, _components_ContextMenuItem_vue__WEBPACK_IMPORTED_MODULE_1__["default"])
   app.component(_components_ContextMenuSub_vue__WEBPACK_IMPORTED_MODULE_2__["default"].name, _components_ContextMenuSub_vue__WEBPACK_IMPORTED_MODULE_2__["default"])
